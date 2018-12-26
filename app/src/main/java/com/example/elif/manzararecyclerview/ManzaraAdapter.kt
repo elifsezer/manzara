@@ -20,12 +20,6 @@ class ManzaraAdapter(tumManzaralar: ArrayList<Manzara>) : RecyclerView.Adapter<M
         return manzaralar.size
     }
 
-    fun removeItem(position: Int) {
-        manzaralar.removeAt(position)
-        notifyItemRemoved(position)
-        notifyItemRangeChanged(position,manzaralar.size)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ManzaraViewHolder {
 
         var inflater = LayoutInflater.from(parent.context)
@@ -37,8 +31,9 @@ class ManzaraAdapter(tumManzaralar: ArrayList<Manzara>) : RecyclerView.Adapter<M
     //ayrıştırılan elemanları burada atama işlemi yaptık.
     override fun onBindViewHolder(holder: ManzaraViewHolder, position: Int) {
 
-        holder.manzaraBaslik.text = manzaralar.get(position).baslik
-        holder.manzaraAciklama.text = manzaralar.get(position).aciklama
+
+       /* holder.manzaraBaslik.text = manzaralar.get(position).baslik
+        holder.manzaraAciklama.text = manzaralar.get(position).aciklama*/
 
         Log.e("RecyclerView", "OnBindViewHolder Tetiklendi.")
     }
@@ -50,19 +45,17 @@ class ManzaraAdapter(tumManzaralar: ArrayList<Manzara>) : RecyclerView.Adapter<M
         var teksatirManzara = itemView as CardView
         var manzaraBaslik = teksatirManzara.tvManzaraBaslik
         var manzaraAciklama = teksatirManzara.tvManzaraAciklama
-
-        //log kaydını yazamabilmem için bir methodun içinde olması gerekir. O yüzden inite koyduk
-        init {
-            manzaraBaslik.tvManzaraBaslik as TextView
-            manzaraAciklama.tvManzaraAciklama as TextView
-
-        }
-
+    }
+    fun addItem(baslik:String,aciklama:String)
+    {
+        manzaralar.add(Manzara(baslik,aciklama))
+        notifyItemInserted(manzaralar.size)
     }
     fun removeAt(position: Int) {
         manzaralar.removeAt(position)
         notifyItemRemoved(position)
     }
+
 
 
 

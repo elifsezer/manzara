@@ -10,11 +10,21 @@
              android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/recyclerViewManzara"/>
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="2dp" android:layout_marginTop="0dp"
+            android:id="@+id/recyclerViewManzara" android:layout_height="match_parent"
+            android:layout_above="@+id/floatingActionButton" android:layout_marginBottom="5dp"
+            android:layout_margin="5dp"/>
+    <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:id="@+id/floatingActionButton"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="22dp"/>
 </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
