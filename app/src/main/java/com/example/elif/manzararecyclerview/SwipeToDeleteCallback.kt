@@ -7,7 +7,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
 
-abstract class SwipeToDeleteCallback(context: Context):ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+abstract class SwipeToDeleteCallback(context: Context):ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {
     var deleteIcon=ContextCompat.getDrawable(context,R.drawable.ic_delete_sweep_black_24dp)
     var intrinsicWidth=deleteIcon?.intrinsicWidth
     var intrinsicHeight=deleteIcon?.intrinsicHeight
